@@ -1,40 +1,53 @@
-<form ... action="/thanks.html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact • Kitchen Table Tutoring</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>Kitchen Table Tutoring</header>
 
-<form class="kt-form"
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="_gotcha">
-  <!-- Required hidden field so Netlify can identify the form -->
-  <input type="hidden" name="form-name" value="contact">
+  <main class="container">
+    <h1>Contact</h1>
+    <p>Have a question or want to schedule a session? Send me a message and I’ll get back to you.</p>
 
-  <!-- Honeypot: keep hidden -->
-  <input type="text" name="_gotcha" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true" />
+    <!-- ACTION = your Formspree endpoint -->
+    <form class="kt-form" action="https://formspree.io/f/xjkelrql" method="POST">
+      <div class="field">
+        <label for="name">Full name <span aria-hidden="true">*</span></label>
+        <input id="name" name="name" type="text" required autocomplete="name" />
+      </div>
 
-  <div class="field">
-    <label for="name">Full name <span aria-hidden="true">*</span></label>
-    <input id="name" name="name" type="text" required autocomplete="name" />
-  </div>
+      <div class="field">
+        <label for="email">Email <span aria-hidden="true">*</span></label>
+        <input id="email" name="_replyto" type="email" required autocomplete="email" />
+      </div>
 
-  <div class="field">
-    <label for="email">Email <span aria-hidden="true">*</span></label>
-    <input id="email" name="email" type="email" required autocomplete="email" />
-  </div>
+      <div class="field">
+        <label for="phone">Phone (optional)</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" />
+      </div>
 
-  <div class="field">
-    <label for="phone">Phone (optional)</label>
-    <input id="phone" name="phone" type="tel" autocomplete="tel" />
-  </div>
+      <div class="field">
+        <label for="subject">Subject</label>
+        <input id="subject" name="subject" type="text" />
+      </div>
 
-  <div class="field">
-    <label for="subject">Subject</label>
-    <input id="subject" name="subject" type="text" />
-  </div>
+      <div class="field">
+        <label for="message">Message <span aria-hidden="true">*</span></label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
 
-  <div class="field">
-    <label for="message">Message <span aria-hidden="true">*</span></label>
-    <textarea id="message" name="message" rows="6" required></textarea>
-  </div>
+      <button class="btn-primary" type="submit">Send Message</button>
+    </form>
 
-  <button class="btn-primary" type="submit">Send Message</button>
-</form>
+    <p class="form-note">
+      Prefer email? <a href="https://formspree.io/f/xjkelrql">Email me directly</a>.
+    </p>
+  </main>
+
+  <footer>© 2025 Kitchen Table Tutoring</footer>
+</body>
+</html>
