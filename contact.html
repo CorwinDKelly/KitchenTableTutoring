@@ -1,0 +1,40 @@
+<form ... action="/thanks.html">
+
+<form class="kt-form"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="_gotcha">
+  <!-- Required hidden field so Netlify can identify the form -->
+  <input type="hidden" name="form-name" value="contact">
+
+  <!-- Honeypot: keep hidden -->
+  <input type="text" name="_gotcha" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true" />
+
+  <div class="field">
+    <label for="name">Full name <span aria-hidden="true">*</span></label>
+    <input id="name" name="name" type="text" required autocomplete="name" />
+  </div>
+
+  <div class="field">
+    <label for="email">Email <span aria-hidden="true">*</span></label>
+    <input id="email" name="email" type="email" required autocomplete="email" />
+  </div>
+
+  <div class="field">
+    <label for="phone">Phone (optional)</label>
+    <input id="phone" name="phone" type="tel" autocomplete="tel" />
+  </div>
+
+  <div class="field">
+    <label for="subject">Subject</label>
+    <input id="subject" name="subject" type="text" />
+  </div>
+
+  <div class="field">
+    <label for="message">Message <span aria-hidden="true">*</span></label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+  </div>
+
+  <button class="btn-primary" type="submit">Send Message</button>
+</form>
