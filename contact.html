@@ -6,6 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
 </head>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+
+    const src = params.get("src");
+    const version = params.get("v");
+
+    const sourceField = document.getElementById("source-field");
+    const versionField = document.getElementById("version-field");
+
+    if (src && sourceField) {
+      sourceField.value = src;
+    }
+
+    if (version && versionField) {
+      versionField.value = version;
+    }
+
+    console.log("src =", src);
+    console.log("v =", version);
+    console.log("source field =", sourceField ? sourceField.value : "missing");
+    console.log("version field =", versionField ? versionField.value : "missing");
+  });
+</script>
 <body>
   <header>Kitchen Table Tutoring</header>
 
@@ -38,7 +62,9 @@
         <textarea id="message" name="message" rows="6" required></textarea>
       </div>
 
+      <!--Hidden location and version fields-->
       <input type="hidden" name="source" id="source-field">
+      <input type="hidden" name="version" id="version-field">
 
       <button class="btn-primary" type="submit">Contact Me</button>
     </form>
